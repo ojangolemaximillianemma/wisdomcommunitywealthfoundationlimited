@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wisdom Foundation | Creating Hope, Changing Lives</title>
+
+    <meta name="description"
+          content="Wisdom Foundation is a charitable organization dedicated to education, community development, healthcare and empowering vulnerable communities.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        :root {
+            --primary: #087f5b;
+            --primary-dark: #056044;
+            --secondary: #f4b942;
+            --dark: #14251e;
+            --text: #52645c;
+            --light: #f5f9f7;
+            --white: #ffffff;
+            --border: #e4ece8;
+            --shadow: 0 15px 45px rgba(15, 52, 39, 0.10);
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1150px, 92%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 55px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--primary);
+            background: #e8f7f1;
+            padding: 8px 17px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .8px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(34px, 5vw, 50px);
+            color: var(--dark);
+            line-height: 1.15;
+            margin-bottom: 17px;
+        }
+
+        .section-header p {
+            font-size: 17px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 14px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border-color: white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+
+        /* =========================================================
+           TOP BAR
+        ========================================================= */
+
+        .topbar {
+            background: var(--dark);
+            color: rgba(255,255,255,.85);
+            padding: 9px 0;
+            font-size: 13px;
+        }
+
+        .topbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .topbar-info {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .topbar-info span {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .topbar-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .topbar-social a:hover {
+            color: var(--secondary);
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,.05);
+        }
+
+        .navbar {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-weight: 800;
+            color: var(--dark);
+            font-size: 21px;
+        }
+
+        .logo-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: var(--primary);
+            font-size: 20px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 29px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #37483f;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-donate {
+            padding: 11px 20px !important;
+            color: white !important;
+            background: var(--primary);
+            border-radius: 30px;
+        }
+
+        .nav-donate:hover {
+            color: white !important;
+            background: var(--primary-dark);
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 25px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(90deg,
+                rgba(9, 40, 29, .91) 0%,
+                rgba(9, 40, 29, .73) 47%,
+                rgba(9, 40, 29, .25) 100%),
+                url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            color: white;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,.13);
+            border: 1px solid rgba(255,255,255,.25);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(45px, 7vw, 76px);
+            line-height: 1.03;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            max-width: 610px;
+            font-size: 18px;
+            color: rgba(255,255,255,.88);
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 45px;
+            font-size: 13px;
+            color: rgba(255,255,255,.82);
+        }
+
+        .avatars {
+            display: flex;
+        }
+
+        .avatars img {
+            width: 39px;
+            height: 39px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            margin-left: -9px;
+        }
+
+        .avatars img:first-child {
+            margin-left: 0;
+        }
+
+
+        /* =========================================================
+           QUICK IMPACT
+        ========================================================= */
+
+        .impact-strip {
+            margin-top: -55px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .impact-box {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 30px;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 10px 20px;
+            border-right: 1px solid var(--border);
+        }
+
+        .impact-item:last-child {
+            border-right: none;
+        }
+
+        .impact-item i {
+            color: var(--primary);
+            font-size: 26px;
+            margin-bottom: 9px;
+        }
+
+        .impact-number {
+            display: block;
+            color: var(--dark);
+            font-family: "Playfair Display", serif;
+            font-size: 31px;
+            font-weight: 700;
+        }
+
+        .impact-label {
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 75px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+            padding-right: 45px;
+            padding-bottom: 45px;
+        }
+
+        .about-main {
+            height: 480px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        .about-small {
+            position: absolute;
+            width: 230px;
+            height: 190px;
+            object-fit: cover;
+            bottom: 0;
+            right: 0;
+            border: 8px solid white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .experience-badge {
+            position: absolute;
+            left: -20px;
+            bottom: 65px;
+            background: var(--secondary);
+            color: var(--dark);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            font-weight: 800;
+            line-height: 1.1;
+            box-shadow: var(--shadow);
+        }
+
+        .experience-badge strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 29px;
+        }
+
+        .about-content h2 {
+            font-family: "Playfair Display", serif;
+            color: var(--dark);
+            font-size: clamp(35px, 5vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 17px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .check-list li {
+            margin: 12px 0;
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+        }
+
+        .check-list i {
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+
+        /* =========================================================
+           CAUSES
+        ========================================================= */
+
+        .causes {
+            background: var(--light);
+        }
+
+        .cause-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .cause-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(15,52,39,.06);
+            transition: .35s;
+        }
+
+        .cause-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .cause-image {
+            height: 225px;
+            object-fit: cover;
+        }
+
+        .cause-body {
+            padding: 25px;
+        }
+
+        .cause-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            color: var(--primary);
+            background: #e9f7f2;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .cause-body h3 {
+            color: var(--dark);
+            font-size: 21px;
+            margin-bottom: 9px;
+        }
+
+        .cause-body p {
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .learn {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .learn i {
+            margin-left: 5px;
+            transition: .2s;
+        }
+
+        .learn:hover i {
+            margin-left: 9px;
+        }
+
+
+        /* =========================================================
+           FEATURE CTA
+        ========================================================= */
+
+        .feature {
+            padding: 100px 0;
+        }
+
+        .feature-box {
+            min-height: 450px;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(90deg,
+                rgba(4, 52, 36, .95),
+                rgba(4, 52, 36, .72),
+                rgba(4, 52, 36, .1)),
+                url("https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1600&q=85")
+                center/cover;
+        }
+
+        .feature-content {
+            max-width: 600px;
+            padding: 55px;
+            color: white;
+        }
+
+        .feature-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(34px, 5vw, 50px);
+            line-height: 1.1;
+            margin-bottom: 17px;
+        }
+
+        .feature-content p {
+            color: rgba(255,255,255,.85);
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================================
+           PROGRAMS
+        ========================================================= */
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            display: flex;
+            gap: 20px;
+            transition: .3s;
+        }
+
+        .program-card:hover {
+            border-color: #b8d9ce;
+            box-shadow: var(--shadow);
+        }
+
+        .program-icon {
+            min-width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: #e9f7f2;
+            color: var(--primary);
+            display: grid;
+            place-items: center;
+            font-size: 23px;
+        }
+
+        .program-card h3 {
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .program-card p {
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           DONATION
+        ========================================================= */
+
+        .donate-section {
+            background: #f5f9f7;
+        }
+
+        .donate-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .donate-image {
+            height: 570px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        .donate-content h2 {
+            color: var(--dark);
+            font-family: "Playfair Display", serif;
+            font-size: clamp(36px, 5vw, 50px);
+            line-height: 1.1;
+            margin-bottom: 17px;
+        }
+
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .amount {
+            border: 1px solid #cadbd5;
+            background: white;
+            border-radius: 10px;
+            padding: 13px;
+            text-align: center;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .amount:hover,
+        .amount.active {
+            border-color: var(--primary);
+            background: #e9f7f2;
+            color: var(--primary);
+        }
+
+        .donation-input {
+            display: flex;
+            border: 1px solid #cadbd5;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 14px;
+        }
+
+        .donation-input span {
+            padding: 13px 15px;
+            font-weight: 700;
+            background: #f3f7f5;
+        }
+
+        .donation-input input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 13px;
+            font-size: 16px;
+        }
+
+        .secure-note {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-top: 14px;
+            font-size: 12px;
+            color: #708079;
+        }
+
+        .secure-note i {
+            color: var(--primary);
+        }
+
+
+        /* =========================================================
+           TESTIMONIALS
+        ========================================================= */
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: white;
+        }
+
+        .stars {
+            color: #f2ad26;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            font-size: 15px;
+            font-style: italic;
+            margin-bottom: 22px;
+        }
+
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .person img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .person strong {
+            display: block;
+            color: var(--dark);
+        }
+
+        .person small {
+            color: #829089;
+        }
+
+
+        /* =========================================================
+           VOLUNTEER
+        ========================================================= */
+
+        .volunteer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .volunteer h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(35px, 5vw, 52px);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .volunteer p {
+            max-width: 650px;
+            margin: auto auto 25px;
+            color: rgba(255,255,255,.85);
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-family: "Playfair Display", serif;
+            color: var(--dark);
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .contact-icon {
+            min-width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #e9f7f2;
+            color: var(--primary);
+        }
+
+        .contact-item strong {
+            color: var(--dark);
+            display: block;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #d4e1dc;
+            border-radius: 10px;
+            outline: none;
+            transition: .2s;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(8,127,91,.08);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #10231c;
+            color: rgba(255,255,255,.65);
+            padding-top: 70px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 45px;
+            padding-bottom: 50px;
+        }
+
+        .footer-logo {
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .footer-about {
+            max-width: 340px;
+            font-size: 14px;
+        }
+
+        footer h4 {
+            color: white;
+            margin-bottom: 17px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 9px 0;
+            font-size: 14px;
+        }
+
+        footer li a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 37px;
+            height: 37px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            color: white;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.08);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
+        ========================================================= */
+
+        #backTop {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            display: none;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+
+        /* =========================================================
+           SCROLL ANIMATION
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px 5%;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                box-shadow: 0 15px 25px rgba(0,0,0,.08);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 8px 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .impact-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .impact-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .impact-item {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .impact-item:nth-child(3),
+            .impact-item:nth-child(4) {
+                border-bottom: none;
+            }
+
+            .about-grid,
+            .donate-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cause-grid,
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-images {
+                max-width: 650px;
+                margin: auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .topbar {
+                display: none;
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .impact-strip {
+                margin-top: -30px;
+            }
+
+            .impact-box {
+                padding: 15px;
+            }
+
+            .impact-item {
+                padding: 15px 5px;
+            }
+
+            .impact-number {
+                font-size: 24px;
+            }
+
+            .cause-grid,
+            .program-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .about-images {
+                padding-right: 20px;
+                padding-bottom: 35px;
+            }
+
+            .about-main {
+                height: 380px;
+            }
+
+            .about-small {
+                width: 170px;
+                height: 140px;
+            }
+
+            .experience-badge {
+                width: 90px;
+                height: 90px;
+                left: -5px;
+                bottom: 45px;
+                font-size: 11px;
+            }
+
+            .experience-badge strong {
+                font-size: 22px;
+            }
+
+            .feature-content {
+                padding: 35px 25px;
+            }
+
+            .feature-box {
+                min-height: 500px;
+            }
+
+            .amount-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="topbar">
+    <div class="container topbar-inner">
+
+        <div class="topbar-info">
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                hello@wisdomfoundation.org
+            </span>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                +254 700 000 000
+            </span>
+        </div>
+
+        <div class="topbar-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-hands-holding-child"></i>
+            </div>
+
+            Wisdom <span>Foundation</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#causes">Our Causes</a></li>
+            <li><a href="#impact">Our Impact</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="#donate" class="nav-donate">
+                    Donate Now
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-label">
+                <i class="fa-solid fa-heart"></i>
+                Together we can make a difference
+            </div>
+
+            <h1>
+                Building a better future,
+                <span>one life at a time.</span>
+            </h1>
+
+            <p>
+                Wisdom Foundation works with communities to create
+                opportunities, restore hope and build a future where
+                every person has the chance to thrive.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#donate" class="btn btn-primary">
+                    <i class="fa-solid fa-heart"></i>
+                    Support Our Mission
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    Discover Our Work
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="hero-trust">
+
+                <div class="avatars">
+
+                    <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=100&q=80" alt="Supporter">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Supporter">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Supporter">
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=80" alt="Supporter">
+
+                </div>
+
+                <span>
+                    Join hundreds of people supporting positive change.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     IMPACT STRIP
+========================================================= -->
+
+<section class="impact-strip" id="impact">
+
+    <div class="container">
+
+        <div class="impact-box reveal">
+
+            <div class="impact-item">
+                <i class="fa-solid fa-children"></i>
+                <span class="impact-number counter" data-target="2500">0</span>
+                <span class="impact-label">Lives Reached</span>
+            </div>
+
+            <div class="impact-item">
+                <i class="fa-solid fa-school"></i>
+                <span class="impact-number counter" data-target="38">0</span>
+                <span class="impact-label">Education Projects</span>
+            </div>
+
+            <div class="impact-item">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span class="impact-number counter" data-target="120">0</span>
+                <span class="impact-label">Active Volunteers</span>
+            </div>
+
+            <div class="impact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span class="impact-number counter" data-target="12">0</span>
+                <span class="impact-label">Communities Served</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-images reveal">
+
+            <img class="about-main"
+                 src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1000&q=85"
+                 alt="Children learning together">
+
+            <img class="about-small"
+                 src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=85"
+                 alt="Children">
+
+            <div class="experience-badge">
+                <div>
+                    <strong>10+</strong>
+                    Years<br>
+                    of service
+                </div>
+            </div>
+
+        </div>
+
+        <div class="about-content reveal">
+
+            <span class="section-tag">Who We Are</span>
+
+            <h2>
+                Wisdom begins when we choose to care.
+            </h2>
+
+            <p>
+                Wisdom Foundation is a community-focused charitable
+                organization dedicated to creating meaningful and
+                sustainable change.
+            </p>
+
+            <p>
+                We believe that lasting development happens when
+                communities are given the knowledge, resources and
+                opportunities they need to build their own future.
+            </p>
+
+            <ul class="check-list">
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Supporting access to quality education.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Empowering families and young people.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Supporting healthier communities.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Creating sustainable local opportunities.
+                </li>
+
+            </ul>
+
+            <a href="#contact" class="btn btn-primary">
+                Learn More About Us
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CAUSES
+========================================================= -->
+
+<section class="section causes" id="causes">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-tag">Our Causes</span>
+
+            <h2>
+                Where your support makes a difference
+            </h2>
+
+            <p>
+                Every contribution helps us work alongside communities
+                to address important challenges and create opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="cause-grid">
+
+            <article class="cause-card reveal">
+
+                <img class="cause-image"
+                     src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85"
+                     alt="Education">
+
+                <div class="cause-body">
+
+                    <div class="cause-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <h3>Education</h3>
+
+                    <p>
+                        Helping children and young people access
+                        learning resources and educational opportunities.
+                    </p>
+
+                    <a href="#donate" class="learn">
+                        Support education
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="cause-card reveal">
+
+                <img class="cause-image"
+                     src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85"
+                     alt="Healthcare">
+
+                <div class="cause-body">
+
+                    <div class="cause-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <h3>Health & Wellness</h3>
+
+                    <p>
+                        Supporting initiatives that promote healthier
+                        families and stronger communities.
+                    </p>
+
+                    <a href="#donate" class="learn">
+                        Support healthcare
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="cause-card reveal">
+
+                <img class="cause-image"
+                     src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=900&q=85"
+                     alt="Community support">
+
+                <div class="cause-body">
+
+                    <div class="cause-icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+
+                    <h3>Community Development</h3>
+
+                    <p>
+                        Working with local communities to develop
+                        practical and sustainable solutions.
+                    </p>
+
+                    <a href="#donate" class="learn">
+                        Support communities
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURE
+========================================================= -->
+
+<section class="feature">
+
+    <div class="container">
+
+        <div class="feature-box reveal">
+
+            <div class="feature-content">
+
+                <span class="section-tag">
+                    Make An Impact
+                </span>
+
+                <h2>
+                    Small acts of kindness can create enormous change.
+                </h2>
+
+                <p>
+                    Whether you give your time, skills or financial support,
+                    your contribution can help create opportunities for
+                    people and communities.
+                </p>
+
+                <a href="#donate" class="btn btn-primary">
+                    Give Today
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROGRAMS
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-tag">Our Programs</span>
+
+            <h2>
+                Creating practical opportunities
+            </h2>
+
+            <p>
+                Our programs are designed around real community needs
+                and long-term impact.
+            </p>
+
+        </div>
+
+
+        <div class="program-grid">
+
+            <div class="program-card reveal">
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h3>Scholarship Support</h3>
+
+                    <p>
+                        Helping students overcome financial barriers
+                        to education.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="program-card reveal">
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
+                <div>
+                    <h3>Digital Skills</h3>
+
+                    <p>
+                        Equipping young people with practical digital
+                        and technology skills.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="program-card reveal">
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <div>
+                    <h3>Livelihoods</h3>
+
+                    <p>
+                        Supporting initiatives that encourage sustainable
+                        income opportunities.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="program-card reveal">
+
+                <div class="program-icon">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                </div>
+
+                <div>
+                    <h3>Community Outreach</h3>
+
+                    <p>
+                        Connecting resources and people with communities
+                        where support is needed.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DONATION
+========================================================= -->
+
+<section class="section donate-section" id="donate">
+
+    <div class="container donate-grid">
+
+        <div class="reveal">
+
+            <img class="donate-image"
+                 src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=1000&q=85"
+                 alt="People helping through charity">
+
+        </div>
+
+
+        <div class="donate-content reveal">
+
+            <span class="section-tag">Make A Donation</span>
+
+            <h2>
+                Your generosity can become someone's opportunity.
+            </h2>
+
+            <p>
+                Choose an amount below to see how you would like to
+                support Wisdom Foundation.
+            </p>
+
+
+            <div class="amount-grid">
+
+                <button class="amount" data-amount="500">
+                    KES 500
+                </button>
+
+                <button class="amount" data-amount="1000">
+                    KES 1,000
+                </button>
+
+                <button class="amount" data-amount="2500">
+                    KES 2,500
+                </button>
+
+                <button class="amount" data-amount="5000">
+                    KES 5,000
+                </button>
+
+                <button class="amount" data-amount="10000">
+                    KES 10,000
+                </button>
+
+                <button class="amount" data-amount="25000">
+                    KES 25,000
+                </button>
+
+            </div>
+
+
+            <div class="donation-input">
+
+                <span>KES</span>
+
+                <input id="donationAmount"
+                       type="number"
+                       placeholder="Enter amount">
+
+            </div>
+
+
+            <button class="btn btn-primary" id="donateButton">
+                Continue With Donation
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <div class="secure-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                Secure donation information
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-tag">Stories Of Hope</span>
+
+            <h2>
+                Together, we create lasting change.
+            </h2>
+
+        </div>
+
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Wisdom Foundation helped our community access
+                    resources that we could not have managed alone.
+                    The support has made a real difference.”
+                </p>
+
+                <div class="person">
+
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
+                         alt="Community member">
+
+                    <div>
+                        <strong>Grace M.</strong>
+                        <small>Community Member</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “I joined as a volunteer because I wanted to give
+                    back. It has been inspiring to see how many people
+                    come together for a common purpose.”
+                </p>
+
+                <div class="person">
+
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
+                         alt="Volunteer">
+
+                    <div>
+                        <strong>Daniel K.</strong>
+                        <small>Volunteer</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial reveal">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “The foundation focuses on practical solutions
+                    rather than temporary help. That approach gives
+                    communities confidence in their future.”
+                </p>
+
+                <div class="person">
+
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=80"
+                         alt="Supporter">
+
+                    <div>
+                        <strong>Sarah A.</strong>
+                        <small>Supporter</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     VOLUNTEER
+========================================================= -->
+
+<section class="section volunteer">
+
+    <div class="container reveal">
+
+        <span class="section-tag">
+            Get Involved
+        </span>
+
+        <h2>
+            You can be part of the change.
+        </h2>
+
+        <p>
+            Share your skills, time or ideas and help us create
+            meaningful opportunities for communities.
+        </p>
+
+        <a href="#contact" class="btn btn-outline">
+            Become A Volunteer
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="section" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-info reveal">
+
+            <span class="section-tag">Contact Us</span>
+
+            <h2>
+                Let's create something meaningful together.
+            </h2>
+
+            <p>
+                Have a question, want to volunteer, partner with us,
+                or learn more about our programs? Send us a message.
+            </p>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <strong>Our Office</strong>
+                    <span>Mombasa, Kenya</span>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+                    <strong>Email</strong>
+                    <span>hello@wisdomfoundation.org</span>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div>
+                    <strong>Phone</strong>
+                    <span>+254 700 000 000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form class="contact-form reveal" id="contactForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text"
+                           id="name"
+                           placeholder="Enter your name"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email"
+                           id="email"
+                           placeholder="you@example.com"
+                           required>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Subject</label>
+
+                <input type="text"
+                       id="subject"
+                       placeholder="How can we help?"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Message</label>
+
+                <textarea id="message"
+                          placeholder="Write your message here..."
+                          required></textarea>
+
+            </div>
+
+
+            <button class="btn btn-primary" type="submit">
+                Send Message
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <a href="#home" class="logo footer-logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+
+                Wisdom Foundation
+
+            </a>
+
+            <p class="footer-about">
+                Creating hope, empowering communities and building
+                opportunities for a better tomorrow.
+            </p>
+
+            <div class="footer-social">
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <h4>Explore</h4>
+
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#causes">Our Causes</a></li>
+                <li><a href="#impact">Our Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h4>Get Involved</h4>
+
+            <ul>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#contact">Volunteer</a></li>
+                <li><a href="#contact">Partner With Us</a></li>
+                <li><a href="#contact">Fundraise</a></li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h4>Our Causes</h4>
+
+            <ul>
+                <li><a href="#causes">Education</a></li>
+                <li><a href="#causes">Healthcare</a></li>
+                <li><a href="#causes">Community Development</a></li>
+                <li><a href="#causes">Youth Empowerment</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <div class="container">
+
+            © <span id="year"></span> Wisdom Foundation.
+            All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button id="backTop">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+<script>
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+        const icon = menuBtn.querySelector("i");
+
+        if (navLinks.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+
+    });
+
+
+    /* Close menu after clicking */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+
+            const icon = menuBtn.querySelector("i");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        });
+
+    });
+
+
+    /* =========================================================
+       COUNTERS
+    ========================================================= */
+
+    const counters = document.querySelectorAll(".counter");
+
+    let countersStarted = false;
+
+    function startCounters() {
+
+        if (countersStarted) return;
+
+        countersStarted = true;
+
+        counters.forEach(counter => {
+
+            const target = Number(counter.dataset.target);
+            let current = 0;
+
+            const increment = Math.max(
+                1,
+                Math.ceil(target / 70)
+            );
+
+            function updateCounter() {
+
+                current += increment;
+
+                if (current >= target) {
+
+                    counter.textContent =
+                        target.toLocaleString() + "+";
+
+                    return;
+                }
+
+                counter.textContent =
+                    current.toLocaleString();
+
+                requestAnimationFrame(updateCounter);
+            }
+
+            updateCounter();
+
+        });
+
+    }
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: .12
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+    /* Start counters when impact becomes visible */
+
+    const impactSection =
+        document.querySelector("#impact");
+
+    const counterObserver =
+        new IntersectionObserver(
+
+            entries => {
+
+                if (entries[0].isIntersecting) {
+
+                    startCounters();
+
+                    counterObserver.disconnect();
+
+                }
+
+            },
+
+            {
+                threshold: .25
+            }
+
+        );
+
+    counterObserver.observe(impactSection);
+
+
+    /* =========================================================
+       DONATION AMOUNTS
+    ========================================================= */
+
+    const amounts =
+        document.querySelectorAll(".amount");
+
+    const donationAmount =
+        document.getElementById("donationAmount");
+
+    amounts.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            amounts.forEach(item =>
+                item.classList.remove("active")
+            );
+
+            button.classList.add("active");
+
+            donationAmount.value =
+                button.dataset.amount;
+
+        });
+
+    });
+
+
+    /* Donation button */
+
+    document
+        .getElementById("donateButton")
+        .addEventListener("click", () => {
+
+            const amount =
+                donationAmount.value;
+
+            if (!amount || Number(amount) <= 0) {
+
+                alert("Please enter a donation amount.");
+
+                donationAmount.focus();
+
+                return;
+            }
+
+            alert(
+                "Thank you for your generosity! " +
+                "Donation amount selected: KES " +
+                Number(amount).toLocaleString() +
+                "."
+            );
+
+        });
+
+
+    /* =========================================================
+       CONTACT FORM
+    ========================================================= */
+
+    document
+        .getElementById("contactForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            alert(
+                "Thank you, " +
+                name +
+                "! Your message has been received."
+            );
+
+            this.reset();
+
+        });
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    const backTop =
+        document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 500) {
+
+            backTop.style.display = "grid";
+
+        } else {
+
+            backTop.style.display = "none";
+
+        }
+
+    });
+
+
+    backTop.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+</script>
+
+</body>
+</html>
